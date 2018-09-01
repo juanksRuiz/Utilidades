@@ -49,7 +49,7 @@ todo = [lin1,lin2]
 for i in range(2):
     datos = separarDatos(',',todo[i])
     output = lineaLatex(datos)
-    print output %(datos[2],datos[0],datos[1])
+ #   print output %(datos[2],datos[0],datos[1])
 
 #############################################
 """
