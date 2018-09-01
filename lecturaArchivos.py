@@ -43,8 +43,8 @@ def lineaLatex(datos):
         return output
 
 
-lin1=  "Juan Camilo Ruiz,19,MACC"
-lin2 = "Daniel Felipe Rambaut Lemus,20,MACC"
+lin1=  "Juan Camilo Ruiz,19,MACC,2017-2"
+lin2 = "Daniel Felipe Rambaut Lemus,20,MACC,2017-2"
 todo = [lin1,lin2]
 for i in range(2):
     datos = separarDatos(',',todo[i])
