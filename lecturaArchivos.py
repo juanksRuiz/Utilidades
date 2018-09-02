@@ -26,6 +26,7 @@ def separarDatos(ch,linea):
             
 def lineaLatex(datos):
 #Esribe la lista datos en una linea para tablero en formato Latex
+    # en este caso, los distintos datos están ya en una lista
     if len(datos) == 0:
         print " ERROR: no hay datos en la lista ingresada"
         return
@@ -43,14 +44,53 @@ def lineaLatex(datos):
         return output
 
 
+def DatosALatex(listaDatos):
+    #Dada una lista de listas de valores, escrib las listas en formato Latex
+    l = listaDatos[0]
+    if len(l) == 0:
+        print " ERROR: no hay l en la lista ingresada"
+        return
+    else:
+        #############
+        linfin = ''
+        for i in range(len(l)):
+            dataperline = 0
+            for lista in listaDatos:
+                if dataperline != len(listaDatos) -1:
+                    linfin = linfin + str(lista[i]) + '&'
+                    dataperline = dataperline + 1
+                    
+                else:
+                    linfin = linfin + str(lista[i]) + '\\' + '\\' + ' \\hline'
+            print linfin
+            linfin = ''
+            #El orden de las listas es el orden de los datos en el tablero
+
+tiempo = [i for i in range(10)]
+y = [i**2 for i in tiempo]
+v = []
+for i in range(len(tiempo)):
+    v.append(5.3*i)
+
+final =[tiempo,y,v]
+
+DatosALatex(final)
+
+
+
+
+
+
+"""
 lin1=  "Juan Camilo Ruiz,19,MACC,2017-2"
 lin2 = "Daniel Felipe Rambaut Lemus,20,MACC,2017-2"
 todo = [lin1,lin2]
+
 for i in range(2):
     datos = separarDatos(',',todo[i])
     output = lineaLatex(datos)
- #   print output %(datos[2],datos[0],datos[1])
-
+    print output %(datos[0],datos[1],datos[2],datos[3])
+"""
 #############################################
 """
 d = 'C:\Users\juank\Desktop\lectura.txt'
