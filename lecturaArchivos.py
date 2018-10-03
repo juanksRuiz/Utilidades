@@ -45,26 +45,11 @@ def lineaLatex(datos):
 
 
 def DatosALatex(listaDatos):
-    #Dada una lista de listas de valores, escrib las listas en formato Latex
-    l = listaDatos[0]
-    if len(l) == 0:
-        print " ERROR: no hay l en la lista ingresada"
-        return
-    else:
-        #############
-        linfin = ''
-        for i in range(len(l)):
-            dataperline = 0
-            for lista in listaDatos:
-                if dataperline != len(listaDatos) -1:
-                    linfin = linfin + str(lista[i]) + '&'
-                    dataperline = dataperline + 1
-                    
-                else:
-                    linfin = linfin + str(lista[i]) + '\\' + '\\' + ' \\hline'
-            print linfin
-            linfin = ''
-            #El orden de las listas es el orden de los datos en el tablero
+    #Dada una lista de listas de valores sacadas Tracker, escribe las listas en formato Latex
+    #Primero Buscar las lineas necesarias en el txt, luego llamar a la funcion con esas lineas
+    for entrada in listaDatos:
+        s = entrada.replace(',','&')
+        print (s + '\\' + '\\' + ' \\hline')
 
 tiempo = [i for i in range(10)]
 y = [i**2 for i in tiempo]
